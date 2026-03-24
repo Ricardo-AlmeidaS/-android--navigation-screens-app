@@ -20,8 +20,8 @@ import androidx.navigation.NavController
 fun PerfilScreen(
     modifier: Modifier = Modifier,
     navController: NavController,
-    nome: String?,
-    idade: int?
+    nome: String,
+    idade: int
 ) {
     Box(
         modifier = modifier

@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.github.ricardoalmeidas.firstapplication.screens.LoginScreen
 import com.github.ricardoalmeidas.firstapplication.screens.MenuScreen
 import com.github.ricardoalmeidas.firstapplication.screens.PedidosScreen
@@ -49,13 +51,13 @@ class MainActivity : ComponentActivity() {
                                 it.arguments?.getString("cliente"))
                         }
                         composable(
-                            route= "perfil/{nome}/{idade}",
+                            route = "perfil/{nome}/{idade}",
                             arguments = listOf(
                                 navArgument("nome") { type = NavType.StringType },
-                                navArgument("idade") { type = NavType.StringType }
+                                navArgument("idade") { type = NavType.IntgType }
                             )
                         ) {
-                            val nome: String? = it.arguments?.getString("nome","Usuário Genérico")
+                            val nome: String? = it.arguments?.getString("nome", "Usuário Genérico")
                             val idade: Int? = it.arguments?.getInt("idade",0)
                             PerfilScreen(
                                 modifier = Modifier.padding(innerPadding),
