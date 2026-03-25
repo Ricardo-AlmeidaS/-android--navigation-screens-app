@@ -69,7 +69,7 @@ composable(
     route = "perfil/{nome}/{idade}",
     arguments = listOf(
         navArgument("nome") { type = NavType.StringType },
-        navArgument("idade") { type = NavType.StringType }
+        navArgument("idade") { type = NavType.IntType }
     )
 )
 ```
